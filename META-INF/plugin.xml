@@ -114,6 +114,10 @@
       file="colorSchemes/GitignoreDarcula.xml"
       scheme="Darcula" />
 
+    <braceMatcher
+      filetype="Gitignore"
+      implementationClass="mobi.hsz.idea.gitignore.highlighter.GitignoreBraceMatcher" />
+
     <colorSettingsPage
       implementation="mobi.hsz.idea.gitignore.highlighter.GitignoreColorSettingsPage" />
 
