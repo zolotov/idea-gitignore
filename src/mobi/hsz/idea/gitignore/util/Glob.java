@@ -2,21 +2,17 @@ package mobi.hsz.idea.gitignore.util;
 
 import com.intellij.openapi.vfs.VirtualFile;
 
-import java.io.File;
 import java.util.ArrayList;
 import java.util.List;
 
 public class Glob {
-    public static final String EXCLUDE = "!.git/";
 
     public static List<VirtualFile> find(VirtualFile root, String glob) {
         return find(root, glob, false);
     }
 
     public static List<VirtualFile> find(VirtualFile root, String glob, boolean includeNested) {
-        List<File> files = new ArrayList<File>();
-        String regex = createRegex(glob);
-        return walk(root, root, regex, includeNested);
+        return walk(root, root, createRegex(glob), includeNested);
     }
 
     public static List<String> findAsPaths(VirtualFile root, String glob) {

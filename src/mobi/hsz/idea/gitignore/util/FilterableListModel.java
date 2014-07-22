@@ -11,7 +11,7 @@ public class FilterableListModel<T extends Comparable> extends DefaultListModel<
     public void filter(String value) {
         List<T> filtered = new ArrayList<T>();
         for (T element : getElements()) {
-            if (element.toString().toLowerCase().contains(value.toLowerCase())) {
+            if (element.toString().equalsIgnoreCase(value)) {
                 filtered.add(element);
             }
         }
